@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brigitte Solis</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <!-- Option 1: Include in HTML -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg bg-black">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="#yo">Yo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#habilidades">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="yo" class="container-fluid d-flex align-items-center">
+      <div class="container py-5 my-5">
+          <h1 class="display-5 fw-bold">Hola, soy</h1>
+          <h1 id="app" class="display-5 fw-bold"><span id="texto"></span><span
+                  class="Typewriter__cursor">|</span></h1>
+
+          <div class="col-lg-6">
+              <p class="lead mb-4">Me considero alguien capaz de desempeñarse en cualquier lugar,delegando con responsabilidad y entusiasmo.
+              </p>
+              <div class="d-grid gap-2 d-sm-flex">
+                  <button type="button" class="btn btn-outline-danger btn-lg px-4 gap-3">Contáctame</button>
+                  <a class="px-3 py-2" href="dulce:dulcesol0606@gmail.com">dulcesol0606@gmail.com</a>
+              </div>
+          </div>
+      </div>
+  </header>
+
+  <script>
+    var texto = ["Brigitte Solis", "Estudiante", "Ingeniera", "Strong Woman"];
+    var elementoTexto = document.getElementById("texto");
+    var velocidad = 150;
+
+    function escribirTexto(texto, elemento) {
+        var i = 0;
+        var interval = setInterval(function () {
+            if (i < texto.length) {
+                elemento.textContent += texto[i];
+                i++;
+            } else {
+                clearInterval(interval);
+            }
+        }, velocidad);
+    }
+
+    function iniciarEscritura() {
+        // Función para escribir el texto una vez
+        function escribirUnaVez() {
+            for (var i = 0; i < texto.length; i++) {
+                setTimeout(function (word) {
+                    return function () {
+                        elementoTexto.textContent = "";
+                        escribirTexto(word, elementoTexto);
+                    };
+                }(texto[i]), i * (texto[i].length * velocidad + 1000));
+            }
+        }
+
+        // Función para repetir el proceso indefinidamente
+        function repetir() {
+            escribirUnaVez(); // Escribir el texto una vez
+            setTimeout(repetir, texto.length * (texto[0].length * velocidad + 1000)); // Esperar hasta que el texto se haya escrito una vez y luego repetir
+        }
+
+        repetir(); // Iniciar el proceso de escritura repetida
+    }
+
+    iniciarEscritura();
+</script>
+
+    
+    <section id="habilidades" class="container px-4 py-5">
+      <h1 class="display-5 fw-bold text-body-emphasis">Habilidades</h1>
+      <div class="row g-4 py-5">
+          <div class="feature col text-center">
+              <div class="feature-icon">
+                  <i class="bi bi-code-slash icono" style="font-size: 4rem;"></i>
+              </div>
+              <h2 class="subtitulo-habilidades text-dark mt-2">Desarrollo web</h2>
+              <p class="text-dark">Creadora de sitios web con HTML, CSS y JS. Apasionada del internet y de poner mi conocimiento al alcance de los demás.</p>
+          </div>
+          <div class="feature col text-center">
+              <div class="feature-icon">
+                  <i class="bi bi-people icono" style="font-size: 4rem;"></i>
+              </div>
+              <h2 class="subtitulo-habilidades text-dark mt-2">Trabajo en equipo</h2>
+              <p class="text-dark">Me gusta colaborar en equipo, ya que me gusta recibir ideas de los demás y así entregar un gran proyecto.</p>
+          </div>
+          <div class="feature col text-center">
+              <div class="feature-icon">
+                  <i class="bi bi-bookmark-check icono" style="font-size: 4rem;"></i>
+              </div>
+              <h2 class="subtitulo-habilidades text-dark mt-2">Responsabilidad</h2>
+              <p class="text-dark">Me comprometo con los proyectos, buscando cumplirla con integridad y confianza.</p>
+          </div>
+      </div>
+  </section>
+  
+  
+  
+
+
+    <main id="proyectos" class="container-fluid d-flex align-items-center">
+        <div class="container py-5 my-5">
+            <h1 class="display-5 fw-bold text-body-emphasis">Proyectos</h1>
+            <div class="album py-5 bg-body-tertiary">
+              <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="album py-5 bg-body-tertiary">
+                <div class="container">
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                      <div class="card shadow-sm">
+                        <img src="proyectEnrique.jpg" class="card-img-top" alt="Proyecto Enrique">
+                        <div class="card-body">
+                          <p class="card-text text-dark">Proyecto escolar basado en Recursos Humanos del Instituto Tecnológico de México-Iguala. </p>
+                          <div class="d-flex justify-content-between align-items-center">
+                                
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card shadow-sm">
+                            <img src="formularioP.jpg" class="card-img-top" alt="Formulario">                           
+                             <div class="card-body">
+                              <p class="card-text text-dark">Formulario para el diseño del proyecto escolar para la empresa ZazilTunich. </p>
+                              <div class="d-flex justify-content-between align-items-center">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card shadow-sm">
+                            <img src="registroP.jpg" class="card-img-top" alt="Registro">                           
+                             <div class="card-body">
+                              <p class="card-text text-dark">Registro para el diseño del proyecto escolar para la empresa ZazilTunich. </p>
+                              <div class="d-flex justify-content-between align-items-center">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                
+                        <div class="col">
+                          <div class="card shadow-sm">
+                            <img src="diseñoS.png" class="card-img-top" alt="Registro">                           
+                             <div class="card-body">
+                              <p class="card-text text-dark">Diseño de sobre para carta que hice nada más para distraerme, cuenta con estilos y al dar clic te muestra la carta. </p>
+                              <div class="d-flex justify-content-between align-items-center">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card shadow-sm">
+                            <img src="zambranoS.png" class="card-img-top" alt="Zambrano">                           
+                             <div class="card-body">
+                              <p class="card-text text-dark">Diseño del login de un punto de venta para la papeleria Zambrano, fue un proyecto escolar desarrollado por el lenguaje JAVA. </p>
+                              <div class="d-flex justify-content-between align-items-center">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card shadow-sm">
+                            <img src="loginp.png" class="card-img-top" alt="Zambrano">                           
+                             <div class="card-body">
+                              <p class="card-text text-dark">Diseño del login de la empresa de tours ZazilTunich, fue un proyecto escolar con el framework Laravel, Bootstrap, lenguaje de programación PHP, HTML 5 y MYSQL. </p>
+                              <div class="d-flex justify-content-between align-items-center">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+            
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+    </main>
+
+    <footer id="contacto">
+      <div class="bg-black text-secondary px-4 py-5 text-center">
+          <img src="codigoqr.png" class="codigo-qr" style="position: sticky; top: 10; right: 20; width: 150px; height: auto; margin-bottom: -10px;">
+          <div class="py-5">
+              <i id="icono-footer" class="bi bi-code"></i>
+              <div class="col-lg-6 mx-auto">
+                  <p class="fs-5 mb-4">La educación no cambia al mundo, cambia a las personas que van a cambiar el mundo.</p>
+                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                      <a href="https://github.com/dulce117" target="_blank" rel="noopener noreferrer">
+                          <i class="bi bi-github icono-contacto text-white" style="font-size: 2rem;"></i>
+                      </a>
+                      <a href="https://www.instagram.com/soybrigittee/" target="_blank" rel="noopener noreferrer">
+                          <i class="bi bi-instagram icono-contacto text-white" style="font-size: 2rem;"></i>
+                      </a>
+                      <a href="https://twitter.com/so14849020" target="_blank" rel="noopener noreferrer">
+                          <i class="bi bi-x icono-contacto text-white" style="font-size: 2rem;"></i>
+                      </a>
+                      <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noopener noreferrer">
+                          <i class="bi bi-envelope icono-contacto text-white" style="font-size: 2rem;"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <h6 id="derechos-de-autor">Creado por Brigitte (2024) - Technolochicas PRO</h6>
+      </div>
+  </footer>
+  
+  
+  
+  
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
